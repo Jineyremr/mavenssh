@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>用户管理</title>
+		<link rel="stylesheet" href="../assets/css/amazeui.css" />
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../assets/css/core.css" />
+		<link rel="stylesheet" href="../assets/css/menu.css" />
+		<link rel="stylesheet" href="../assets/css/index.css" />
+		<link rel="stylesheet" href="../assets/css/admin.css" />
+		<link rel="stylesheet" href="../assets/css/page/typography.css" />
+		<link rel="stylesheet" href="../assets/css/page/form.css" />
+        <script type="text/javascript" src="../assets/js/jquery-2.1.0.js" ></script>
+
+        <script type="text/javascript">
+            $(document).ready(function (){
+                $("#role").change(function (){
+                    if($("#role :selected").val()=="option3"){
+                        $(".am-modal-dialog").css("height","380");
+                        $("#point").css("display","block");
+                    }else{
+                        $(".am-modal-dialog").css("height","320");
+                        $("#point").css("display","none");
+                    }
+                });
+            });
+        </script>
+        <style type="text/css">
+            .am-avg-sm-14 li{
+                margin-right: 10px;
+            }
+        </style>
+	</head>
+	<body>
+		<!-- Begin page -->
+		<header class="am-topbar am-topbar-fixed-top">		
+			<div class="am-topbar-left am-hide-sm-only">
+                <a href="index.html" class="logo"><span>Admin<span>to</span></span><i class="zmdi zmdi-layers"></i></a>
+            </div>
+	
+			<div class="contain">
+				<ul class="am-nav am-navbar-nav am-navbar-left">
+
+					<li><h4 class="page-title">用户管理</h4></li>
+				</ul>
+				
+				<ul class="am-nav am-navbar-nav am-navbar-right">
+
+				</ul>
+			</div>
+		</header>
+		<!-- end page -->
+		
+		
+		<div class="admin">
+			<!--<div class="am-g">-->
+		<!-- ========== Left Sidebar Start ========== -->
+		<!--<div class="left side-menu am-hide-sm-only am-u-md-1 am-padding-0">
+			<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 548px;">
+				<div class="sidebar-inner slimscrollleft" style="overflow: hidden; width: auto; height: 548px;">-->
+                  <!-- sidebar start -->
+				  <div class="admin-sidebar am-offcanvas  am-padding-0" id="admin-offcanvas">
+				    <div class="am-offcanvas-bar admin-offcanvas-bar">
+				    	<!-- User -->
+						<div class="user-box am-hide-sm-only">
+	                        <div class="user-img">
+	                            <img src="../assets/img/avatar-1.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
+	                            <div class="user-status offline"><i class="am-icon-dot-circle-o" aria-hidden="true"></i></div>
+	                        </div>
+	                        <h5><a href="#">Mat Helme</a> </h5>
+	                        <ul class="list-inline">
+	                            <li>
+	                                <a href="#">
+	                                    <i class="fa fa-cog" aria-hidden="true"></i>
+	                                </a>
+	                            </li>
+	
+	                            <li>
+	                                <a href="#" class="text-custom">
+	                                    <i class="fa fa-cog" aria-hidden="true"></i>
+	                                </a>
+	                            </li>
+	                        </ul>
+	                    </div>
+	                    <!-- End User -->
+
+                        <ul class="am-list admin-sidebar-list">
+                            <li class="admin-parent">
+                                <a class="am-cf" data-am-collapse="{target: '#collapse-nav1'}"><span class="am-icon-table"></span> 单据业务 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+                                <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav1">
+                                    <li><a href="add-invoice.jsp" class="am-cf"> 添加发货单</span></a></li>
+                                </ul>
+                            </li>
+                            <li class="admin-parent">
+                                <a class="am-cf" data-am-collapse="{target: '#collapse-nav2'}"><span class="am-icon-table"></span> 查询业务 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+                                <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav2">
+                                    <li><a href="search-invoice.html" class="am-cf"> 发货单查询</span></a></li>
+                                    <li><a href="">发货单挂失</a></li>
+                                </ul>
+                            </li>
+                            <li class="admin-parent">
+                                <a class="am-cf" data-am-collapse="{target: '#collapse-nav3'}"><i class="am-icon-line-chart" aria-hidden="true"></i> 银行业务 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+                                <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav3">
+                                    <li><a href="cash.html" class="am-cf"> 现金支付</span></a></li>
+                                    <li><a href="card.html" class="am-cf"> 银行转账</span></a></li>
+                                </ul>
+                            </li>
+                            <li class="admin-parent">
+                                <a class="am-cf" data-am-collapse="{target: '#collapse-nav4'}"><span class="am-icon-file"></span> 客户中心 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+                                <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav4">
+                                    <li><a href="customer.html" class="am-cf"> 客户信息管理</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="admin-parent">
+                                <a class="am-cf" data-am-collapse="{target: '#collapse-nav5'}"><span class="am-icon-table"></span> 系统管理 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+                                <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav5">
+                                    <li><a href="" class="am-cf"> 用户管理</span></a></li>
+                                    <li><a href="">会计权限</a></li>
+                                    <li><a href="logistic-point.html">物流点管理</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+				</div>
+				  </div>
+				  <!-- sidebar end -->
+    
+				<!--</div>
+			</div>
+		</div>-->
+		<!-- ========== Left Sidebar end ========== -->
+		
+		
+		
+	<!--	<div class="am-g">-->
+		<!-- ============================================================== -->
+		<!-- Start right Content here -->
+		<div class="content-page">
+			<!-- Start content -->
+			<div class="content">
+				<div class="card-box">
+					<!-- Row start -->
+					<div class="am-g">
+						<div class="am-u-sm-12 am-u-md-6">
+				          <div class="am-btn-toolbar">
+				            <div class="am-btn-group am-btn-group-xs">
+                              <h2 style="color: #1b9eca;margin-top: 0px" >用户列表：</h2>
+
+				              <div class="am-u-sm-12"><button type="button" class="am-btn am-btn-primary" data-am-modal="{target: '#doc-modal-1',closeViaDimmer: 0,  width: 600, height: 320}"><span class="am-icon-plus"></span> 新增</button></div>
+
+                                <div class="am-modal am-modal-no-btn" tabindex="-1" id="doc-modal-1">
+                                    <div class="am-modal-dialog">
+                                        <div class="am-modal-hd"><strong>填写用户信息</strong>
+                                            <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+                                            <span data-am-modal-close class="am-close" onclick="javascript:$('.am-dimmer').hide();">&times;</span>
+                                        </div>
+                                        <div class="am-modal-bd am-u-sm-12 am-u-md-12 am-u-lg-12">
+
+                                            <form class="am-form am-form-horizontal" >
+                                                <div class="am-form-group">
+                                                    <label class="am-u-md-2 am-form-label" for="doc-text-5">用户姓名</label>
+                                                    <div class="am-u-md-10">
+                                                        <input class="am-form-field am-radius" placeholder="请输入用户姓名" name="id" id="doc-text-5" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="am-form-group">
+                                                    <label class="am-u-md-2 am-form-label" for="doc-text-5">登录名称</label>
+                                                    <div class="am-u-md-10">
+                                                        <input class="am-form-field am-radius" placeholder="请输入登录名称" name="id" id="doc-text-5" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="am-form-group">
+                                                    <label class="am-u-md-2 am-form-label" for="doc-text-5">密码</label>
+                                                    <div class="am-u-md-10">
+                                                        <input class="am-form-field am-radius" placeholder="密码" name="id" id="doc-text-5" value="" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="am-form-group" id="role">
+                                                    <label class="am-u-md-2 am-form-label" for="doc-select-3">用户角色</label>
+                                                    <div class="am-u-md-6 am-u-end">
+                                                        <select id="doc-select-3" style="width: 100%">
+                                                            <option value="option1">--请选择--</option>
+                                                            <option value="option2">管理员</option>
+                                                            <option value="option3">营业网点</option>
+                                                            <option value="option4">操作员</option>
+                                                            <option value="option5">会计</option>
+                                                        </select>
+                                                        <span class="am-form-caret"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="am-form-group" style="display: none" id="point">
+                                                    <label class="am-u-md-2 am-form-label" for="doc-select-3">营业网点</label>
+                                                    <div class="am-u-md-6 am-u-end">
+                                                        <select id="doc-select-3" style="width: 100%">
+                                                            <option value="">--请选择--</option>
+                                                            <option value="option2">济源</option>
+                                                            <option value="option3">郑州</option>
+                                                            <option value="option4">三门峡</option>
+                                                        </select>
+                                                        <span class="am-form-caret"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="am-form-group" >
+                                                    <div class="am-g">
+                                                        <div class="am-u-md-6 am-u-sm-centered" align="">
+                                                            <input type="submit" class="am-btn am-btn-primary am-icon-search" value="保存" />
+                                                            <input type="reset" class="am-btn am-btn-danger " data-am-modal-close onclick="javascript:$('.am-dimmer').hide();" value="关闭"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <form class="am-form" >
+                                    <div class="am-form-group">
+                                        <label class="am-u-md-2 am-form-label" for="doc-text-1">用户名</label>
+                                        <div class="am-u-md-2">
+                                            <input class="am-form-field am-radius" placeholder="用户名" name="id" id="doc-text-1" />
+                                        </div>
+
+                                        <label class="am-u-md-2 am-form-label" for="doc-text-2">登录名称</label>
+                                        <div class="am-u-md-2">
+                                            <input class="am-form-field am-radius" placeholder="登录名称" name="id" id="doc-text-2" />
+                                        </div>
+
+                                        <div class="am-u-md-2">
+                                            <input type="submit" class="am-btn am-btn-primary am-icon-search" value="搜索" />
+                                        </div>
+                                        <div class="am-u-md-2 am-u-end">
+                                            <input type="reset" class="am-btn am-btn-danger " value="清空"/>
+                                        </div>
+
+                                    </div>
+                                </form>
+
+				            </div>
+				          </div>
+				        </div>
+					  <!-- Row end -->
+					  
+					  <!-- Row start -->
+					  	<div class="am-g">
+        <div class="am-u-sm-12">
+            <table class="am-table am-table-striped am-table-hover table-main">
+                <thead>
+                    <tr>
+                        <th class="table-check"><input type="checkbox" /></th>
+                        <th>编号</th>
+                        <th>客户名称</th>
+                        <th>开户银行</th>
+                        <th>银行账号</th>
+                        <th>联系电话</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="gradeX">
+                        <td><input type="checkbox" /></td>
+                        <td>88888</td>
+                        <td>有才</td>
+                        <td>建设银行</td>
+                        <td>6217506320112225</td>
+                        <td>18852336956</td>
+                        <td>
+                            <div class="am-btn-toolbar">
+                                <div class="am-btn-group am-btn-group-xs">
+                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 刪除</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="gradeX">
+                        <td><input type="checkbox" /></td>
+                        <td>88888</td>
+                        <td>有才</td>
+                        <td>建设银行</td>
+                        <td>6217506320112225</td>
+                        <td>18852336956</td>
+                        <td>
+                            <div class="am-btn-toolbar">
+                                <div class="am-btn-group am-btn-group-xs">
+                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 刪除</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="gradeX">
+                        <td><input type="checkbox" /></td>
+                        <td>88888</td>
+                        <td>有才</td>
+                        <td>建设银行</td>
+                        <td>6217506320112225</td>
+                        <td>18852336956</td>
+                        <td>
+                            <div class="am-btn-toolbar">
+                                <div class="am-btn-group am-btn-group-xs">
+                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 刪除</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="gradeX">
+                        <td><input type="checkbox" /></td>
+                        <td>88888</td>
+                        <td>有才</td>
+                        <td>建设银行</td>
+                        <td>6217506320112225</td>
+                        <td>18852336956</td>
+                        <td>
+                            <div class="am-btn-toolbar">
+                                <div class="am-btn-group am-btn-group-xs">
+                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 刪除</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="gradeX">
+                        <td><input type="checkbox" /></td>
+                        <td>88888</td>
+                        <td>有才</td>
+                        <td>建设银行</td>
+                        <td>6217506320112225</td>
+                        <td>18852336956</td>
+                        <td>
+                            <div class="am-btn-toolbar">
+                                <div class="am-btn-group am-btn-group-xs">
+                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 刪除</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+
+      </div>
+					  <!-- Row end -->
+					  
+					</div>
+				
+				
+				
+				
+				</div>
+			
+
+			</div>
+		</div>
+		<!-- end right Content here -->
+		<!--</div>-->
+		</div>
+		</div>
+		
+		<!-- navbar -->
+		<a href="admin-offcanvas" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"><!--<i class="fa fa-bars" aria-hidden="true"></i>--></a>
+		
+
+		<script type="text/javascript" src="../assets/js/amazeui.min.js"></script>
+		<script type="text/javascript" src="../assets/js/app.js" ></script>
+		<script type="text/javascript" src="../assets/js/blockUI.js" ></script>
+	</body>
+	
+</html>

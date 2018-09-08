@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cc.entity">
+    <class name="User" table="jd_user">
+        <id name="user_id">
+            <generator class="native"></generator>
+        </id>
+        <property name="user_loginname"></property>
+        <property name="user_loginpassword"></property>
+        <property name="user_name"></property>
+
+
+        <many-to-one name="wld" column="wld_id" class="Wld"></many-to-one>
+        <many-to-one name="role" column="role_id" class="Role"></many-to-one>
+
+        <set name="posthws" inverse="true">
+            <key column="user_id"></key>
+            <one-to-many class="Posthw" />
+        </set>
+
+
+    </class>
+</hibernate-mapping>

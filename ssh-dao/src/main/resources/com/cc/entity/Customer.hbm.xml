@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cc.entity">
+    <class name="Customer" table="jd_customer">
+        <id name="customer_id">
+            <generator class="assigned"></generator>
+        </id>
+        <property name="customer_name"></property>
+        <property name="customer_bank"></property>
+        <property name="customer_bankaddress"></property>
+        <property name="customer_banknumber"></property>
+        <property name="customer_idcard"></property>
+        <property name="cuatomer_phone"></property>
+        <property name="customer_regdate"></property>
+
+        <set name="posthws" inverse="true">
+            <key column="customer_id"></key>
+            <one-to-many class="Posthw" />
+        </set>
+
+
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cc.entity">
+    <class name="Posthw" table="jd_posthw">
+        <id name="posthw_id">
+            <generator class="assigned"></generator>
+        </id>
+        <property name="detailaddr"></property>
+        <property name="posthw_shr"></property>
+        <property name="posthw_shrdh"></property>
+        <property name="posthw_hwbh"></property>
+        <property name="posthw_js"></property>
+        <property name="posthw_hwmc"></property>
+        <property name="posthw_yf"></property>
+        <property name="posthw_dshk"></property>
+        <property name="posthw_shf"></property>
+        <property name="posthw_fkfs"></property>
+        <property name="posthw_fhrq"></property>
+        <property name="posthw_bz"></property>
+        <property name="posthw_thrq"></property>
+        <property name="posthw_dkrq"></property>
+        <property name="posthw_dklx"></property>
+        <property name="posthw_thzt"></property>
+        <property name="posthw_dyrq"></property>
+        <property name="posthw_lsfy"></property>
+        <property name="posthw_ydk"></property>
+        <property name="posthw_sxf"></property>
+        <property name="posthw_th"></property>
+        <property name="posthw_zyr"></property>
+        <property name="posthw_fhr"></property>
+        <property name="posthw_fhrdh"></property>
+
+        <many-to-one name="wld" column="wld_id" class="Wld"></many-to-one>
+        <many-to-one name="user" column="user_id" class="User"></many-to-one>
+        <many-to-one name="customer" column="customer_id" class="Customer"></many-to-one>
+
+
+    </class>
+</hibernate-mapping>

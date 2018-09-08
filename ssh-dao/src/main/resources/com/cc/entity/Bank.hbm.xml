@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cc.entity">
+    <class name="Bank" table="jd_bank">
+        <id name="bank_id">
+            <generator class="native"></generator>
+        </id>
+        <property name="bank_name"></property>
+        <property name="bank_address"></property>
+
+
+    </class>
+</hibernate-mapping>
